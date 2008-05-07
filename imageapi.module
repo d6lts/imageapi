@@ -4,15 +4,20 @@
 /**
  * @file
  *
- * An ImageAPI supporting additional image plugins as modules. 
- * Images are treated as objects, and images are not written per
- * manipulation as Drupal's core image handling works.
+ * An ImageAPI supporting mulitple image toolkits. Image toolkits are 
+ * implemented as modules. Images are objects, but have no methods
  * 
  * 
  * imageapi image api workflow... 
+ *
  * $image = imageapi_image_open($path) to get an image object for $path...
  * image_X($image, $arg1, $arg2)  to manipulate image object...
  * imageapi_image_close($image) to overwrite original image.
+ *
+ *  @todo: 2.x implement a fully OO image class with a proper constructor
+ *  and methods. The methods will batch methods in an array, and call the 
+ *  underlying toolkits on close. See the ImageAPI ImageMagick toolkit 
+ *  for the proof of concept by Drewish.
  * 
  */
 

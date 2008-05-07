@@ -8,7 +8,8 @@
 /**
  * Implementation of hook_imageapi_toolkit().
  *
- * this hook only gets called to see is a module implements the imageapi hooks...
+ * this hook only gets called to see if a module implements 
+ * the imageapi hooks...
  */
 function imageapi_gd_imageapi_toolkit() {
 }
