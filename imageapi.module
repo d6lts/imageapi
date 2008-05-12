@@ -21,7 +21,6 @@
  * 
  */
 
-define('IMAGEAPI_MINIMUM_PHP', '5.2');
 function imageapi_menu($may_cache) {
   $items = array();
   if ($may_cache) {
