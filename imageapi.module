@@ -269,6 +269,16 @@ function imageapi_image_crop(&$image, $x, $y, $width, $height) {
   if (empty($height)) $height = $width / $aspect;
   if (empty($width)) $width = $height * $aspect;
 
+  // Ensure target image size is not greater than original size.
+  if ($width > $image->info['width']) {
+    $width = $image->info['width'];
+    $x = 0;
+  }
+  if ($height > $image->info['height']) {
+    $height = $image->info['height'];
+    $y = 0;
+  }
+
   return call_user_func($image->toolkit .'_image_crop', $image, $x, $y, $width, $height);
 }
  
