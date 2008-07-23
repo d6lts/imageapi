@@ -12,6 +12,17 @@ function imageapi_requirements($phase) {
   // Ensure translations don't break at install time
   $t = get_t();
 
+  // Check for an image library.
+  if (count(imageapi_get_available_toolkits()) == 0) {
+    $requirements['imageapi_toolkits'] = array(
+      'title' => $t('ImageAPI Toolkit'),
+      'value' => $t('No image toolkits available'),
+      'severity' => REQUIREMENT_ERROR,
+      'description' => $t('ImageAPI requires a toolkit such as ImageAPI GD or ImageAPI Imagemagick to function.'),
+    );
+  }
+ 
+
   if (version_compare(phpversion(), IMAGEAPI_RECOMMENDED_PHP) < 0) {
      $requirements['imageapi_php'] = array(
       'title' => $t('ImageAPI PHP'),
