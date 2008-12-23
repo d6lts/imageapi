@@ -2,5 +2,7 @@
 name = ImageAPI
 description = ImageAPI supporting multiple toolkits.
 package = ImageCache
-core = 6.x
+core = 7.x
 php = 5.2
+files[] = imageapi.install
+files[] = imageapi.module

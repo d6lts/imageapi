@@ -2,5 +2,5 @@
 name = ImageAPI ImageMagick
 description = Command Line ImageMagick support.
 package = ImageCache
-core = 6.x
-
+core = 7.x
+files[] = imageapi_imagemagick.module
