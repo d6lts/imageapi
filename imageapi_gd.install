@@ -73,8 +73,10 @@ function imageapi_gd_requirements($phase) {
 }
 
 /**
- * Implementation of hook_uninstall().
+ * Remove the old JPEG quality setting.
  */
-function imageapi_gd_uninstall() {
+function imageapi_gd_update_7000() {
   variable_del('imageapi_jpeg_quality');
+  return array();
 }
+
