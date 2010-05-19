@@ -75,13 +75,13 @@ function imagerotate(&$im, $angle, $bgcolor) {
   imagesavealpha($rotate, TRUE);
 
   switch ($angle) {
-    case 270:
+    case 90:
       $rot_width--;
       for ($y = 0; $y < $height; ++$y)
         for ($x = 0; $x < $width; ++$x)
           imagesetpixel($rotate, $rot_width - $y, $x, imagecolorat($im, $x, $y));
       break;
-    case 90:
+    case 270:
       $rot_height--;
       for ($y = 0; $y < $height; ++$y)
         for ($x = 0; $x < $width; ++$x)
