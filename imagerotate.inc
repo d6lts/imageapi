@@ -1,9 +1,9 @@
-<?php 
+<?php
 // $Id$
 
-/** 
+/**
  * @file
- * provides the imagerotate function for php-gd extensions compiled with the 
+ * provides the imagerotate function for php-gd extensions compiled with the
  * upstream libgd instead of the libgd bundled with php.
  */
 
@@ -12,7 +12,7 @@
 define('IMAGEAPI_IMAGEROTATE_PHP', 1);
 
 function imagerotate(&$im, $angle, $bgcolor) {
-  if ($angle === 0) { 
+  if ($angle === 0) {
     return $im;
   }
   // imagerotate() in php's libgd rotates the image counterclockwise,
