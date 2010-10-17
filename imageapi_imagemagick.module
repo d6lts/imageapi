@@ -217,11 +217,19 @@ function _imageapi_imagemagick_convert_exec($command_args, &$output, &$errors) {
       drupal_set_message(t('ImageMagick output: @output', array('@output' => $output)));
     }
 
-    if (!$return_code) {
+    if ($return_code != 0) {
       // If ImageMagick returned a non-zero code, trigger a PHP error that will
       // be caught by Drupal's error handler, logged to the watchdog and
       // eventually displayed to the user if configured to do so.
-      trigger_error(t('ImageMagick reported an error: %error', array('%error' => $errors)), E_USER_ERROR);
+
+      // If $errors is empty, only report the error code.
+      if (empty($errors)) {
+        trigger_error(t('ImageMagick reported error code !code.', array('!code' => $return_code)), E_USER_ERROR);
+      }
+      // Otherwise report the error code, and the error message.
+      else {
+        trigger_error(t("ImageMagick reported error code !code.\nMessage:\n!error", array('!code' => $return_code, '!error' => $errors)), E_USER_ERROR);
+      }
     }
 
     return $return_code;
