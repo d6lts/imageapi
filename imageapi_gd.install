@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 function imageapi_gd_requirements($phase) {
   $requirements = array();

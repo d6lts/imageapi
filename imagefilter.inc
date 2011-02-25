@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 //Made by Chao Xu(Mgccl) 3/1/07
 //www.webdevlogs.com

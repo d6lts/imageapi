@@ -1,4 +1,3 @@
-; $Id$
 name = ImageAPI ImageMagick
 description = Command Line ImageMagick support.
 package = ImageCache
