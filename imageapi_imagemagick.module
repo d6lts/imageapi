@@ -180,7 +180,7 @@ function _imageapi_imagemagick_convert_exec($command_args, &$output, &$errors) {
 
   // Specify Drupal's root as the working a working directory so that relative
   // paths are interpreted correctly.
-  $drupal_path = $_SERVER['DOCUMENT_ROOT'] . dirname($_SERVER['SCRIPT_NAME'] ? $_SERVER['SCRIPT_NAME'] : $_SERVER['SCRIPT_FILENAME']);
+  $drupal_path = getcwd();
 
   if (strstr($_SERVER['SERVER_SOFTWARE'], 'Win32') || strstr($_SERVER['SERVER_SOFTWARE'], 'IIS')) {
     // Use Window's start command to avoid the "black window" from showing up:
