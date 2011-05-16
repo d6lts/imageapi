@@ -36,6 +36,12 @@ function imageapi_gd_settings_form() {
     '#default_value' => variable_get('imageapi_crop_background', ''),
     '#field_prefix' => '#',
   );
+  $form['imageapi_interlaced'] = array(
+    '#title' => t('Enable Interlacing'),
+    '#type' => 'checkbox',
+    '#default_value' => variable_get('imageapi_interlaced', 0),
+    '#description' => t('Interlacing is a method of encoding a bitmap image such that a person who has partially received it sees a degraded copy of the entire image. When communicating over a slow communications link, this is often preferable to seeing a perfectly clear copy of one part of the image, as it helps the viewer decide more quickly whether to abort or continue the transmission.')
+  );
   return system_settings_form($form);
 }
 
@@ -70,6 +76,9 @@ function imageapi_gd_image_close($image, $destination) {
   $function = 'image'. $extension;
   if (!function_exists($function)) {
     return FALSE;
+  }
+  if (variable_get('imageapi_interlaced', 0)) {
+    imageinterlace($image->resource, 1);
   }
   if ($extension == 'jpeg') {
     return $function($image->resource, $destination, variable_get('imageapi_jpeg_quality', 75));
