@@ -1,8 +1,8 @@
 ImageAPI 
 
 A non writing image manipulation API for Drupal. This API is meant to be used in place of the API provided 
-by image.inc. You probably do not need to install this module unless another module are you using requires
-it. It provides no new features to your drupal site. It only provides an API other modules can leverage.
+by image.inc. You probably do not need to install this module unless another module you are using requires
+it. It provides no new features to your Drupal site. It only provides an API other modules can leverage.
 
 Changes From image.inc API:
   - Images are objects.
