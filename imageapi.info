@@ -3,3 +3,9 @@ description = ImageAPI supporting multiple toolkits.
 package = ImageCache
 core = 6.x
 php = 5.1
+
+; Information added by Drupal 6 LTS vendors on 2021-07-12
+version = "6.x-1.12"
+core = "6.x"
+project = "imageapi"
+datestamp = "1626123258"
